@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Santhosh Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      color: white;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      overflow-x: hidden;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    #header {
+      width: 100%;
+      padding: 40px 0;
+    }
+
+    .container {
+      padding: 10px 10%;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: 140px;
+    }
+
+    nav ul li {
+      display: inline-block;
+      list-style: none;
+      margin: 10px 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: '';
+      width: 0;
+      height: 2px;
+      background: orange;
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      transition: 0.5s;
+    }
+
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+      width: 100%;
+    }
+
+    .header-text {
+      margin-top: 10%;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .header-text h1 {
+      font-size: 60px;
+      margin-top: 20px;
+    }
+
+    .header-text h1 span {
+      color: orange;
+    }
+
+    #contact {
+      padding: 60px 10%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 15px;
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-align: center;
+      animation: floatCard 6s ease-in-out infinite;
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .sub-title {
+      font-size: 40px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    .contact-info p {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #f5f5f5;
+    }
+
+    .contact-info a {
+      color: #ffae42;
+      text-decoration: none;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 15px;
+      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid #ffae42;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.12);
+      border-color: orange;
+    }
+
+    .contact-form button {
+      padding: 15px;
+      background: orange;
+      color: black;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+      border-radius: 10px;
+    }
+
+    .contact-form button:hover {
+      background: chocolate;
+      transform: scale(1.03);
+    }
+
+    /* Space floating objects */
+    .space-object {
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      animation: float 10s infinite ease-in-out alternate;
+      opacity: 0.6;
+    }
+
+    .astronaut {
+      width: 80px;
+      top: 100px;
+      right: 40px;
+      animation-delay: 0s;
+    }
+
+    .planet {
+      width: 100px;
+      bottom: 80px;
+      left: 30px;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-20px) rotate(5deg); }
+    }
+
+    @media screen and (max-width: 768px) {
+      .header-text h1 {
+        font-size: 40px;
+      }
+
+      .contact-card {
+        padding: 30px 20px;
+      }
+
+      .space-object {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div id="header">
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="portfolio.html">Home</a></li>
+          <li><a href="portfolio.html">About</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-text">
+        <h1><span>Contact</span> Me</h1>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact">
+    <div class="contact-card">
+      <h2 class="sub-title">Get in Touch</h2>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:santhosh@example.com">santhosh@example.com</a></p>
+        <p>Phone: <span style="color: #ffae42;">+91 98765 43210</span></p>
+        <p>Location: Tadipatri, Andhra Pradesh, India</p>
+      </div>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Fade-in effect
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - Santhosh Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(-45deg, #121212, #1e1e1e, #2c2c2c, #121212);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    #header {
+      width: 100%;
+      padding: 40px 0;
+      background: transparent;
+    }
+
+    .container {
+      padding: 10px 10%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: 140px;
+      filter: drop-shadow(0 0 5px orange);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .logo:hover {
+      transform: scale(1.1);
+    }
+
+    nav ul li {
+      display: inline-block;
+      list-style: none;
+      margin: 10px 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      position: relative;
+      padding-bottom: 3px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a::after {
+      content: '';
+      width: 0;
+      height: 2px;
+      background: orange;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transition: 0.4s ease;
+      border-radius: 2px;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: orange;
+    }
+
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+      width: 100%;
+    }
+
+    .header-text {
+      margin-top: 100px;
+      font-size: 30px;
+      text-align: center;
+      text-shadow: 0 0 10px orange;
+    }
+
+    .header-text h1 {
+      font-size: 60px;
+      margin-top: 20px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .header-text h1 span {
+      color: chocolate;
+      text-shadow: 0 0 20px chocolate;
+    }
+
+    .sub-title {
+      font-size: 40px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 40px;
+      text-align: center;
+      text-shadow: 0 0 12px orange;
+      letter-spacing: 1.5px;
+    }
+
+    #projects {
+      padding: 40px 10%;
+      max-width: 1200px;
+      margin: 0 auto 80px auto;
+    }
+
+    .project-block {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 60px;
+      background: rgba(30, 30, 30, 0.85);
+      padding: 25px 30px;
+      border-left: 6px solid orange;
+      border-radius: 14px;
+      box-shadow: 0 0 15px rgba(255, 140, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: saturate(180%) blur(10px);
+    }
+
+    .project-block:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 30px rgba(255, 140, 0, 0.7);
+    }
+
+    .project-info {
+      flex: 1;
+    }
+
+    .project-info h3 {
+      font-size: 28px;
+      color: orange;
+      margin-bottom: 12px;
+      text-shadow: 0 0 8px orange;
+      letter-spacing: 0.8px;
+      font-weight: 600;
+    }
+
+    .project-info p {
+      font-size: 18px;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    .project-img {
+      width: 200px;
+      border: 3px solid orange;
+      border-radius: 14px;
+      box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .project-img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(255, 165, 0, 0.9);
+    }
+
+    .tech-logo {
+      width: 100px;
+      filter: drop-shadow(0 0 8px orange);
+      transition: transform 0.3s ease, filter 0.3s ease;
+      cursor: pointer;
+    }
+
+    .tech-logo:hover {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 15px orange);
+    }
+
+    @media screen and (max-width: 768px) {
+      .project-block {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .tech-logo {
+        margin-top: 20px;
+      }
+
+      .project-img {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="portfolio.html">Home</a></li>
+          <li><a href="portfolio.html">About</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-text">
+        <h1>My <span>Projects</span></h1>
+      </div>
+    </div>
+  </div>
+
+  <div id="projects">
+    <h2 class="sub-title">Highlighted Projects</h2>
+
+    <div class="project-block">
+      <div class="project-info">
+        <h3>Online Voting System</h3>
+        <p>A secure web-based voting system built with PHP and MySQL, deployed locally using XAMPP.</p>
+      </div>
+      <img src="online-survey.jpg" alt="PHP Logo" class="tech-logo" />
+    </div>
+
+    <div class="project-block">
+      <div class="project-info">
+        <h3>Portfolio Website</h3>
+        <p>Personal portfolio built using HTML, CSS, and JavaScript to showcase certifications and projects.</p>
+      </div>
+      <img src="Portfoliologo.jpg" alt="HTML Logo" class="tech-logo" />
+    </div>
+
+    <div class="project-block">
+      <div class="project-info">
+        <h3>Automatic Sleep Disorder Classification Using Deep Learning Based on Sleep Quality features</h3>
+        <p>We used a deep learning model (CNN) and also Lstm to automatically classify sleep disorders by extracting and analyzing sleep quality features </p>
+      </div>
+      <img src="sleepdisorderlogo.jpg" alt="HTML Logo" class="tech-logo" />
+    </div>
+
+    <!-- Add more projects here if needed -->
+
+  </div>
+
+  <script>
+    // Fade-in on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
+
+    // Fade-out on navigation click
+    document.querySelectorAll("a[href]").forEach(link => {
+      const url = new URL(link.href, window.location.href);
+      const isSameHost = url.hostname === window.location.hostname;
+
+      if (isSameHost && !url.hash && !link.href.includes("mailto:")) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.body.classList.remove("fade-in");
+          setTimeout(() => {
+            window.location.href = this.href;
+          }, 300);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
